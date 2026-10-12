@@ -55,6 +55,17 @@ describe('GarmentPreview', () => {
     expect(host.querySelector('.shirt__body')).toBeNull();
   });
 
+  it('should fall back to the drawing when the variant image fails to load', () => {
+    const fixture = render({ ...garment, imageUrl: '/api/files/gone/content' });
+    const host = hostOf(fixture);
+
+    host.querySelector('img')?.dispatchEvent(new Event('error'));
+    fixture.detectChanges();
+
+    expect(host.querySelector('img')).toBeNull();
+    expect(host.querySelector('.shirt__body')).not.toBeNull();
+  });
+
   it('should name the drop and the number inside it when the shirt is shown', () => {
     const text = hostOf(render(garment)).textContent ?? '';
 

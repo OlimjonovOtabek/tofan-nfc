@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
 import { PassportBook } from './passport-book';
@@ -6,14 +6,14 @@ import { PassportBook } from './passport-book';
 @Component({
   imports: [PassportBook],
   template: `
-    <app-passport-book [pageLabels]="labels">
-      <section>Cover</section>
+    <app-passport-book [(opened)]="opened">
+      <span bookCover>Cover</span>
       <section>Data</section>
     </app-passport-book>
   `,
 })
 class PassportBookHost {
-  protected readonly labels = ['Cover', 'Data'];
+  readonly opened = signal(false);
 }
 
 async function render(): Promise<ComponentFixture<PassportBookHost>> {
@@ -23,77 +23,42 @@ async function render(): Promise<ComponentFixture<PassportBookHost>> {
   return fixture;
 }
 
-function bookOf(fixture: ComponentFixture<PassportBookHost>): HTMLElement {
-  const book = (fixture.nativeElement as HTMLElement).querySelector<HTMLElement>('app-passport-book');
-  if (book === null) {
-    throw new Error('The passport book is missing.');
+function partOf(fixture: ComponentFixture<PassportBookHost>, selector: string): HTMLElement {
+  const part = (fixture.nativeElement as HTMLElement).querySelector<HTMLElement>(selector);
+  if (part === null) {
+    throw new Error(`The passport book has no ${selector}.`);
   }
-  return book;
-}
-
-function activePageOf(fixture: ComponentFixture<PassportBookHost>): string | null {
-  const dot = bookOf(fixture).querySelector('[aria-current="page"]');
-  return dot === null ? null : dot.getAttribute('aria-label');
-}
-
-function pointer(fixture: ComponentFixture<PassportBookHost>, type: string, clientX: number): void {
-  bookOf(fixture).dispatchEvent(new MouseEvent(type, { clientX, bubbles: true }));
-  fixture.detectChanges();
+  return part;
 }
 
 describe('PassportBook', () => {
-  it('should open the cover when the book is first shown', async () => {
+  it('should show the closed cover over the pages when the book is first shown', async () => {
     const fixture = await render();
 
-    expect(activePageOf(fixture)).toBe('Cover');
+    expect(partOf(fixture, '.passport-book__cover').getAttribute('aria-expanded')).toBe('false');
+    expect(partOf(fixture, '.passport-book__pages').hasAttribute('inert')).toBe(true);
+    expect(partOf(fixture, '.passport-book__cover').textContent).toContain('Cover');
   });
 
-  it('should turn to the next page when the user swipes left', async () => {
+  it('should open the pages and tell the host when the cover is tapped', async () => {
     const fixture = await render();
 
-    pointer(fixture, 'pointerdown', 300);
-    pointer(fixture, 'pointerup', 100);
+    partOf(fixture, '.passport-book__cover').click();
+    fixture.detectChanges();
 
-    expect(activePageOf(fixture)).toBe('Data');
+    expect(fixture.componentInstance.opened()).toBe(true);
+    expect(partOf(fixture, '.passport-book__pages').hasAttribute('inert')).toBe(false);
+    expect(partOf(fixture, '.passport-book__cover').getAttribute('aria-hidden')).toBe('true');
   });
 
-  it('should turn back to the previous page when the user swipes right', async () => {
-    const fixture = await render();
-    pointer(fixture, 'pointerdown', 300);
-    pointer(fixture, 'pointerup', 100);
-
-    pointer(fixture, 'pointerdown', 100);
-    pointer(fixture, 'pointerup', 300);
-
-    expect(activePageOf(fixture)).toBe('Cover');
-  });
-
-  it('should stay on the page when the swipe is shorter than the threshold', async () => {
+  it('should open when the cover is activated from the keyboard', async () => {
     const fixture = await render();
 
-    pointer(fixture, 'pointerdown', 300);
-    pointer(fixture, 'pointerup', 280);
+    partOf(fixture, '.passport-book__cover').dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter' }),
+    );
+    fixture.detectChanges();
 
-    expect(activePageOf(fixture)).toBe('Cover');
-  });
-
-  it('should ignore a stray pointer up when the browser cancelled the gesture', async () => {
-    const fixture = await render();
-
-    pointer(fixture, 'pointerdown', 300);
-    pointer(fixture, 'pointercancel', 250);
-    pointer(fixture, 'pointerup', 100);
-
-    expect(activePageOf(fixture)).toBe('Cover');
-  });
-
-  it('should let horizontal swipes reach the book when used on a touch screen', async () => {
-    const fixture = await render();
-    const viewport = bookOf(fixture).querySelector<HTMLElement>('.passport-book__viewport');
-    if (viewport === null) {
-      throw new Error('The passport viewport is missing.');
-    }
-
-    expect(getComputedStyle(viewport).touchAction).toBe('pan-y');
+    expect(fixture.componentInstance.opened()).toBe(true);
   });
 });

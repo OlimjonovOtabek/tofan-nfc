@@ -247,6 +247,8 @@ It is on the passport only. The scan never says anything about the owner.
 
 Bearer required. A plain array inside the `Result` envelope, newest activation first. Revoked and hidden
 shirts are left out. Not called by this app yet: the shirt list is phase 4 (`docs/roadmap.md`).
+The Swagger schema (checked 2026-10-12) declares `imageFileId`, `activatedAt` and `expiresAt` as
+nullable, so the DTO for this endpoint must type all three as `string | null`.
 
 ```jsonc
 [
