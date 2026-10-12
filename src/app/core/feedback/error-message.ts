@@ -7,7 +7,7 @@ import { RateLimitedError } from '@shared/models/errors/rate-limited.error';
 import { ValidationError } from '@shared/models/errors/validation.error';
 import { InvalidCredentialsError } from '@core/auth/errors/invalid-credentials.error';
 import { SessionExpiredError } from '@core/auth/errors/session-expired.error';
-import { AppLocale } from '@core/layout/language/app-locale';
+import { AppLocale } from '@core/layout/models/app-locale';
 
 const ISSUE_SEPARATOR = ' ';
 

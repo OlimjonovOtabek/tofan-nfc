@@ -1,4 +1,4 @@
-import { AppLocale } from '@core/layout/language/app-locale';
+import { AppLocale } from '@core/layout/models/app-locale';
 import { Garment } from '@shared/garment/garment';
 
 export interface PassportHolder {

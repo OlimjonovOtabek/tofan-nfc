@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppPaths } from '@core/config/app-paths';
-import { toAppLocale } from '@core/layout/language/app-locale';
+import { toAppLocale } from '@core/layout/models/app-locale';
 import { Logo } from '@shared/components/logo/logo';
 import { PassportBook } from '../../components/passport-book/passport-book';
 import { StateScreen } from '@shared/components/state-screen/state-screen';

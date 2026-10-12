@@ -3,7 +3,7 @@ import { AuthStore } from '@core/auth/auth.store';
 import { Registration } from '@core/auth/models/registration';
 import { toErrorMessage } from '@core/feedback/error-message';
 import { NotificationService } from '@core/feedback/notification.service';
-import { toAppLocale } from '@core/layout/language/app-locale';
+import { toAppLocale } from '@core/layout/models/app-locale';
 
 @Injectable()
 export class AuthFormStore {

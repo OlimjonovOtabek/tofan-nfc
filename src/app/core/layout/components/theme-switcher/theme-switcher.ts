@@ -1,5 +1,5 @@
 import { Component, afterNextRender, computed, inject } from '@angular/core';
-import { ThemeStore } from './theme.store';
+import { ThemeStore } from '../../theme.store';
 
 const SWITCH_LABELS = {
   dark: $localize`:@@layout.theme.toLight:Yorug' mavzuga o'tish`,
