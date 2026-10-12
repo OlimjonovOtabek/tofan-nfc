@@ -1,4 +1,4 @@
-import { GarmentDto } from '@shared/models/garment.dto';
+import { GarmentDto } from '@shared/garment/garment.dto';
 
 export enum GarmentScanStateDto {
   Invalid = 1,

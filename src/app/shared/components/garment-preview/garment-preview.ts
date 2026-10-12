@@ -1,12 +1,12 @@
 import { DatePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
-import { Garment } from '@shared/models/garment';
-import { colorLabelOf, hasColor } from '@shared/models/garment-color-label';
+import { Garment } from '@shared/garment/garment';
+import { colorLabelOf, hasColor } from '@shared/garment/garment-color-label';
 import {
   GarmentPublicStatus,
   GarmentRegistration,
   publicStatusOf,
-} from '@shared/models/garment-registration';
+} from '@shared/garment/garment-registration';
 import { GarmentPhoto } from '../garment-photo/garment-photo';
 
 const STATUS_LABELS: Record<GarmentPublicStatus, string> = {

@@ -1,5 +1,5 @@
 import { AppLocale } from '@core/layout/language/app-locale';
-import { Garment } from '@shared/models/garment';
+import { Garment } from '@shared/garment/garment';
 
 export interface PassportHolder {
   readonly firstName: string;

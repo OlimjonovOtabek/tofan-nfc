@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { GarmentPreview } from '@shared/components/garment-preview/garment-preview';
-import { GarmentRegistration } from '@shared/models/garment-registration';
+import { GarmentRegistration } from '@shared/garment/garment-registration';
 import { Passport } from '../../models/passport';
 import { validityOf } from '../../models/validity';
 

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
-import { Garment } from '@shared/models/garment';
+import { Garment } from '@shared/garment/garment';
 import { GarmentPreview } from './garment-preview';
 
 const garment: Garment = {
