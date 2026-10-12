@@ -1,4 +1,8 @@
-# CLAUDE.md — Peaktofan NFC (Angular)
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+# Peaktofan NFC (Angular)
 
 Strict, repository-aware rules for Claude Code. If a request conflicts with this file, follow this file.
 If a request is ambiguous, choose the option that keeps the structure below simple and consistent.
@@ -35,9 +39,15 @@ Stack:
 
 ```bash
 npm start             # ng serve, /api is proxied to the backend (proxy.conf.json), uz only
+npm run start:dev     # ng serve against the remote dev backend (proxy.dev.conf.json), uz only
 npm run serve:ssr     # every locale on :4200 like production (ssr.env, src/api-proxy.ts)
+npm run serve:ssr:dev # same, against the remote dev backend (ssr.dev.env)
 npm run build         # ng build (must pass before finishing a task)
 npm test              # ng test (Vitest)
+npx ng test --include='**/scan.store.spec.ts'   # single spec file
+npm run lint:comments # comment ban only (scripts/check-no-comments.mjs)
+npm run lint:boundaries # Sheriff only
+npm run format        # Prettier over src/
 npm run lint          # ng lint + lint:comments + lint:boundaries (must pass before finishing a task)
 npm run i18n:extract  # ng extract-i18n into src/locale/messages.xlf
 ```
