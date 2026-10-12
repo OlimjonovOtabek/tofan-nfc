@@ -16,9 +16,7 @@ function runGuard(hasSession: boolean, url: string, platform = 'browser'): boole
   });
 
   const state = { url } as RouterStateSnapshot;
-  return TestBed.runInInjectionContext(() =>
-    authGuard({} as never, state),
-  ) as boolean | UrlTree;
+  return TestBed.runInInjectionContext(() => authGuard({} as never, state)) as boolean | UrlTree;
 }
 
 describe('authGuard', () => {

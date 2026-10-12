@@ -7,7 +7,10 @@ import { AuthStore } from '../auth.store';
 
 function runGuard(hasSession: boolean, returnUrl: string | null): boolean | UrlTree {
   TestBed.configureTestingModule({
-    providers: [provideRouter([]), { provide: AuthStore, useValue: { hasSession: () => hasSession } }],
+    providers: [
+      provideRouter([]),
+      { provide: AuthStore, useValue: { hasSession: () => hasSession } },
+    ],
   });
 
   const route = {
