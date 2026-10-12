@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { AppPaths } from '@core/config/app-paths';
 import { toAppLocale } from '@core/layout/language/app-locale';
 import { Logo } from '@shared/components/logo/logo';
-import { PassportBook } from '@shared/components/passport-book/passport-book';
+import { PassportBook } from '../../components/passport-book/passport-book';
 import { StateScreen } from '@shared/components/state-screen/state-screen';
 import { PassportCard } from '../../components/passport-card/passport-card';
 import { PassportProfile } from '../../components/passport-profile/passport-profile';
