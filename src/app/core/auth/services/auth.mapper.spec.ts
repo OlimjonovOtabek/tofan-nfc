@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { AuthSession } from './auth-session';
+import { AuthSession } from '../models/auth-session';
 import { AuthTokenResponse, GenderDto } from './auth.dto';
 import { toAuthSession, toCreateProfileRequest, toUserProfile } from './auth.mapper';
-import { Registration } from './registration';
+import { Registration } from '../models/registration';
 
 function tokenWith(claims: Record<string, unknown>): string {
   const payload = btoa(JSON.stringify(claims)).replace(/\+/g, '-').replace(/\//g, '_');

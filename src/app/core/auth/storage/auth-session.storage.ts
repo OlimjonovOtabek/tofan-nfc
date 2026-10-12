@@ -1,7 +1,7 @@
 import { Injectable, InjectionToken, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { InMemoryStorage } from './in-memory.storage';
-import { AuthSession } from './auth-session';
+import { AuthSession } from '../models/auth-session';
 
 export const SESSION_STORAGE = new InjectionToken<Storage>('SESSION_STORAGE', {
   providedIn: 'root',

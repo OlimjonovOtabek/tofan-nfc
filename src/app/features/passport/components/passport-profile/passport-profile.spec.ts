@@ -2,7 +2,7 @@ import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it, vi } from 'vitest';
 import { AuthStore } from '@core/auth/auth.store';
-import { UserProfile } from '@core/auth/user-profile';
+import { UserProfile } from '@core/auth/models/user-profile';
 import { PassportProfile } from './passport-profile';
 
 function render(holder: string): { host: HTMLElement; logout: ReturnType<typeof vi.fn> } {

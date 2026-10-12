@@ -1,11 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { ApiClient } from '@core/http/api-client';
 import { NotFoundError } from '@shared/models/errors/not-found.error';
-import { AuthSession } from './auth-session';
-import { UserProfile } from './user-profile';
-import { InvalidCredentialsError } from './invalid-credentials.error';
-import { SessionExpiredError } from './session-expired.error';
-import { Registration, toUsername } from './registration';
+import { AuthSession } from '../models/auth-session';
+import { UserProfile } from '../models/user-profile';
+import { InvalidCredentialsError } from '../errors/invalid-credentials.error';
+import { SessionExpiredError } from '../errors/session-expired.error';
+import { Registration, toUsername } from '../models/registration';
 import {
   AuthTokenResponse,
   LoginRequest,

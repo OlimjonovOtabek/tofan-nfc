@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Router, UrlTree, convertToParamMap } from '@ang
 import { provideRouter } from '@angular/router';
 import { describe, expect, it } from 'vitest';
 import { guestGuard } from './guest.guard';
-import { AuthStore } from './auth.store';
+import { AuthStore } from '../auth.store';
 
 function runGuard(hasSession: boolean, returnUrl: string | null): boolean | UrlTree {
   TestBed.configureTestingModule({
