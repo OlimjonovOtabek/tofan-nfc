@@ -1,13 +1,32 @@
-<nav class="language-switcher" i18n-aria-label="@@layout.languageSwitcher" aria-label="Til tanlash">
-  @for (locale of locales; track locale) {
-    <button
-      type="button"
-      class="language-switcher__option app-tap-target"
-      [class.language-switcher__option--active]="locale === current"
-      [attr.aria-current]="locale === current ? 'true' : null"
-      (click)="switchTo(locale)"
-    >
-      {{ locale }}
-    </button>
-  }
-</nav>
+<button
+  type="button"
+  class="language-switcher__toggle app-tap-target"
+  i18n-aria-label="@@layout.languageSwitcher"
+  aria-label="Til tanlash"
+  aria-haspopup="menu"
+  [attr.aria-expanded]="open()"
+  (click)="toggle()"
+>
+  <i class="pi pi-globe" aria-hidden="true"></i>
+  {{ current }}
+</button>
+
+@if (open()) {
+  <ul class="language-switcher__menu" role="menu">
+    @for (locale of locales; track locale) {
+      <li role="none">
+        <button
+          type="button"
+          role="menuitemradio"
+          class="language-switcher__option app-tap-target"
+          [attr.aria-checked]="locale === current"
+          [attr.lang]="locale"
+          (click)="switchTo(locale)"
+        >
+          <span class="language-switcher__code">{{ locale }}</span>
+          {{ names[locale] }}
+        </button>
+      </li>
+    }
+  </ul>
+}

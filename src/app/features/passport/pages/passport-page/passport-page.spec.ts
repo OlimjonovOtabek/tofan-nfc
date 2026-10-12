@@ -119,6 +119,31 @@ describe('PassportPage', () => {
     expect(textOf(fixture)).not.toContain('Egasi');
   });
 
+  it('should keep the sections closed until the owner opens the cover', async () => {
+    const { fixture } = await render(vi.fn().mockResolvedValue(activePassport));
+    const host = fixture.nativeElement as HTMLElement;
+
+    expect(host.querySelector('app-passport-tabs')).toBeNull();
+
+    host.querySelector<HTMLElement>('.passport-book__cover')?.click();
+    fixture.detectChanges();
+
+    expect(host.querySelectorAll('.passport-tabs__tab')).toHaveLength(3);
+  });
+
+  it('should show the shirt with the days left when the owner opens the shirt section', async () => {
+    const { fixture } = await render(vi.fn().mockResolvedValue(activePassport));
+    const host = fixture.nativeElement as HTMLElement;
+    host.querySelector<HTMLElement>('.passport-book__cover')?.click();
+    fixture.detectChanges();
+
+    host.querySelectorAll<HTMLButtonElement>('.passport-tabs__tab')[1]?.click();
+    fixture.detectChanges();
+
+    expect(textOf(fixture)).toContain('kun qoldi');
+    expect(host.querySelector('app-passport-card')).toBeNull();
+  });
+
   it('should go back to the scan when the server says the caller is not the owner', async () => {
     const notOwner = new BusinessRuleError('not owner', 'Garment.NotOwner');
     const { navigatedTo } = await render(vi.fn().mockRejectedValue(notOwner));

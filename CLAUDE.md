@@ -204,8 +204,9 @@ holds Keycloak secrets.
   replay it. It proves nothing about identity.
 - The **server** decides the scan state (`unclaimed`, `claimable`, `owned`, `foreign`, `expired`,
   `invalid`). The frontend renders what it is told and never infers a state from a 403 or from local data.
-- A non-owner scan shows authenticity only. Owner name, activation date, stamps and rating are never in
-  that response — not hidden by CSS, not present in the payload.
+- A non-owner scan shows authenticity plus the public registration (decided 2026-10-12): the owner's
+  `@username`, the registration date and the validity. Real name, phone, email, stamps and rating are
+  never in that response — not hidden by CSS, not present in the payload.
 - Never put a token in a log, an analytics event, an error report or a query string sent to a third party.
 - Expiry, ownership and claim limits are enforced server-side. Hiding a button is UX, not security.
 
@@ -244,8 +245,8 @@ holds Keycloak secrets.
 - Components: test inputs to rendered output and outputs emitted.
 - Store tests mock the feature service, never `HttpClient`.
 - **Mandatory security tests**: an unauthenticated scan of a claimed shirt renders the authenticity
-  screen and no passport data; a `foreign` state never renders owner information; an expired passport
-  renders locked. See `.claude/rules/testing.md`.
+  screen and no passport data; a `foreign` state renders the `@username`, registration date and validity
+  and nothing else about the owner (no real name, rating or stamps); an expired passport renders locked. See `.claude/rules/testing.md`.
 - Test file sits next to the file: `garment-scan.mapper.spec.ts`. Names: `should <result> when <condition>`.
 
 ## 14. How to work on a request
@@ -271,7 +272,8 @@ Then:
 - Clean Architecture layer folders (`domain/`, `application/`, `infrastructure/`, `presentation/`,
   `data-access/`), repository abstractions, use-case classes, DI composition folders
 - A second authentication system, an SMS/OTP step, or any auth state outside `core/auth`
-- Deciding ownership, validity or expiry on the frontend
+- Deciding ownership, validity or expiry on the frontend. Showing "N days left" computed from the
+  server's `expiresAt` is display only; whether a passport is expired always comes from the server
 - Putting the NFC token anywhere outside the URL and the API call (no logs, no analytics, no storage)
 - OpenAPI code generators and generated clients
 - Mock backends or fake services; the app talks to the real backend

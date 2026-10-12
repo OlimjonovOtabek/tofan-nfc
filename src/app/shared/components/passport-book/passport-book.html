@@ -1,24 +1,19 @@
-<div class="passport-book">
-  <div class="passport-book__viewport">
-    <div class="passport-book__track" [style.transform]="offset()">
-      <ng-content />
-    </div>
+<div class="passport-book" [class.passport-book--open]="opened()">
+  <div class="passport-book__pages" [attr.inert]="opened() ? null : ''">
+    <ng-content />
   </div>
 
-  <nav
-    class="passport-book__nav"
-    i18n-aria-label="@@passport.pages"
-    aria-label="Pasport sahifalari"
+  <div
+    class="passport-book__cover"
+    role="button"
+    [attr.tabindex]="opened() ? -1 : 0"
+    [attr.aria-hidden]="opened() ? 'true' : null"
+    [attr.aria-expanded]="opened()"
+    (click)="open()"
+    (keydown.enter)="open()"
+    (keydown.space)="open()"
   >
-    @for (label of pageLabels(); track label; let i = $index) {
-      <button
-        type="button"
-        class="passport-book__dot app-tap-target"
-        [class.passport-book__dot--active]="i === index()"
-        [attr.aria-current]="i === index() ? 'page' : null"
-        [attr.aria-label]="label"
-        (click)="goTo(i)"
-      ></button>
-    }
-  </nav>
+    <ng-content select="[bookCover]" />
+    <span class="passport-book__hint" i18n="@@passport.cover.open">Ochish uchun bosing</span>
+  </div>
 </div>

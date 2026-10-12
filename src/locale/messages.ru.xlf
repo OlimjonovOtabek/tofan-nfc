@@ -117,13 +117,49 @@
           <context context-type="sourcefile">src/app/core/layout/components/app-shell/app-shell.html</context>
           <context context-type="linenumber">5,7</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profile.signOut" datatype="html">
+        <source>Chiqish</source>
+        <target state="translated">Выйти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/components/app-shell/app-shell.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-profile/passport-profile.html</context>
+          <context context-type="linenumber">21,24</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="layout.languageSwitcher" datatype="html">
         <source>Til tanlash</source>
         <target state="translated">Выбор языка</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/language/language-switcher.html</context>
-          <context context-type="linenumber">1,2</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.theme.toLight" datatype="html">
+        <source>Yorug&apos; mavzuga o&apos;tish</source>
+        <target state="translated">Включить светлую тему</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/theme/theme-switcher.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.theme.toDark" datatype="html">
+        <source>Qorong&apos;i mavzuga o&apos;tish</source>
+        <target state="translated">Включить тёмную тему</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/theme/theme-switcher.ts</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="auth.register.profileIncomplete" datatype="html">
@@ -199,7 +235,7 @@
         <target state="translated">Войти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/pages/login-page/login-page.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37,39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="auth.login.toRegister" datatype="html">
@@ -303,7 +339,7 @@
         <target state="translated">Зарегистрироваться</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/pages/register-page/register-page.html</context>
-          <context context-type="linenumber">70,73</context>
+          <context context-type="linenumber">71,74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="auth.register.toLogin" datatype="html">
@@ -311,15 +347,15 @@
         <target state="translated"> У меня есть аккаунт </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/pages/register-page/register-page.html</context>
-          <context context-type="linenumber">78,81</context>
+          <context context-type="linenumber">79,82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.title" datatype="html">
-        <source>Futbolkangizga telefoningizni tekkizing</source>
+        <source> Futbolkangizga telefoningizni tekkizing </source>
         <target state="translated">Прикоснитесь телефоном к вашей футболке</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/pages/home-page/home-page.html</context>
-          <context context-type="linenumber">3,4</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.lead" datatype="html">
@@ -327,7 +363,7 @@
         <target state="translated"> NFC-чип в футболке Peaktofan открывает цифровой паспорт. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/pages/home-page/home-page.html</context>
-          <context context-type="linenumber">5,8</context>
+          <context context-type="linenumber">11,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.title" datatype="html">
@@ -335,7 +371,7 @@
         <target state="translated">Страница не найдена</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/pages/not-found-page/not-found-page.html</context>
-          <context context-type="linenumber">2,3</context>
+          <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.lead" datatype="html">
@@ -343,7 +379,7 @@
         <target state="translated"> Возможно, ссылка неверна. Отсканируйте футболку снова. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/pages/not-found-page/not-found-page.html</context>
-          <context context-type="linenumber">4,6</context>
+          <context context-type="linenumber">7,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.toHome" datatype="html">
@@ -351,7 +387,191 @@
         <target state="translated"> На главную </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/pages/not-found-page/not-found-page.html</context>
-          <context context-type="linenumber">7,10</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.card.kind" datatype="html">
+        <source>PASPORT</source>
+        <target state="translated">ПАСПОРТ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.holder" datatype="html">
+        <source>Egasi</source>
+        <target state="translated">Владелец</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="garment.color" datatype="html">
+        <source>Rang</source>
+        <target state="translated">Цвет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="garment.size" datatype="html">
+        <source>O&apos;lcham</source>
+        <target state="translated">Размер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.material" datatype="html">
+        <source>Material</source>
+        <target state="translated">Материал</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="garment.manufacturedAt" datatype="html">
+        <source>Ishlab chiqarilgan</source>
+        <target state="translated">Дата производства</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">59,60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.activatedAt" datatype="html">
+        <source>Aktivatsiya</source>
+        <target state="translated">Активация</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.expiresAt" datatype="html">
+        <source>Amal qilish muddati</source>
+        <target state="translated">Срок действия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.rank" datatype="html">
+        <source>Reyting</source>
+        <target state="translated">Рейтинг</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">72,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.rank.none" datatype="html">
+        <source>Hali hisoblanmagan</source>
+        <target state="translated">Ещё не рассчитан</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">77,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.lifetimeDp" datatype="html">
+        <source>DP</source>
+        <target state="translated">DP</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.level" datatype="html">
+        <source>Daraja</source>
+        <target state="translated">Уровень</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.field.serial" datatype="html">
+        <source>Seriya raqami</source>
+        <target state="translated">Серийный номер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-card/passport-card.html</context>
+          <context context-type="linenumber">95,96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profile.language" datatype="html">
+        <source>Til</source>
+        <target state="translated">Язык</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-profile/passport-profile.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.validity.title" datatype="html">
+        <source>Amal qilish muddati</source>
+        <target state="translated">Срок действия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-shirt/passport-shirt.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.locked" datatype="html">
+        <source>Muddati tugagan</source>
+        <target state="translated">Срок действия истек</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-shirt/passport-shirt.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.validity.daysLeft" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ validity().daysLeft }}"/> kun qoldi </source>
+        <target state="translated"> Осталось дней: <x id="INTERPOLATION" equiv-text="{{ validity().daysLeft }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-shirt/passport-shirt.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.tabs" datatype="html">
+        <source>Pasport bo&apos;limlari</source>
+        <target state="translated">Разделы паспорта</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/components/passport-tabs/passport-tabs.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.tab.card" datatype="html">
+        <source>Pasport</source>
+        <target state="translated">Паспорт</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/models/passport-tab.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.tab.shirt" datatype="html">
+        <source>Futbolka</source>
+        <target state="translated">Футболка</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/models/passport-tab.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passport.tab.profile" datatype="html">
+        <source>Profil</source>
+        <target state="translated">Профиль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/passport/models/passport-tab.ts</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="passport.cover.title" datatype="html">
@@ -359,135 +579,15 @@
         <target state="translated">ЦИФРОВОЙ ПАСПОРТ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">6,7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.locked" datatype="html">
-        <source>Muddati tugagan</source>
-        <target state="translated">Срок действия истек</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">10,12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.holder" datatype="html">
-        <source>Egasi</source>
-        <target state="translated">Владелец</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">18,19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.drop" datatype="html">
-        <source>Drop</source>
-        <target state="translated">Дроп</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">23,25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.variant" datatype="html">
-        <source>Model</source>
-        <target state="translated">Модель</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">30,31</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.serial" datatype="html">
-        <source>Seriya raqami</source>
-        <target state="translated">Серийный номер</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">34,35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.material" datatype="html">
-        <source>Material</source>
-        <target state="translated">Материал</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">39,40</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.activatedAt" datatype="html">
-        <source>Aktivatsiya</source>
-        <target state="translated">Активация</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">44,45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.expiresAt" datatype="html">
-        <source>Amal qilish muddati</source>
-        <target state="translated">Срок действия</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">48,49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.rank" datatype="html">
-        <source>Reyting</source>
-        <target state="translated">Рейтинг</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">58,60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.rank.none" datatype="html">
-        <source>Hali hisoblanmagan</source>
-        <target state="translated">Ещё не рассчитан</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">63,64</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.lifetimeDp" datatype="html">
-        <source>DP</source>
-        <target state="translated">DP</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">69</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.field.level" datatype="html">
-        <source>Daraja</source>
-        <target state="translated">Уровень</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.html</context>
-          <context context-type="linenumber">73,74</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.page.cover" datatype="html">
-        <source>Muqova</source>
-        <target state="translated">Обложка</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.ts</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.page.data" datatype="html">
-        <source>Ma&apos;lumot</source>
-        <target state="translated">Данные</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="passport.page.standing" datatype="html">
-        <source>Reyting</source>
-        <target state="translated">Рейтинг</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/passport/pages/passport-page/passport-page.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.revoked.title" datatype="html">
-        <source> Bu futbolka bekor qilingan </source>
+        <source>Bu futbolka bekor qilingan</source>
         <target state="translated"> Эта футболка аннулирована </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">5,7</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.revoked.lead" datatype="html">
@@ -495,15 +595,15 @@
         <target state="translated"> Peaktofan аннулировал цифровой паспорт этой футболки. Для получения подробной информации свяжитесь с нами. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">8,12</context>
+          <context context-type="linenumber">9,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.hidden.title" datatype="html">
-        <source> Pasport vaqtincha yopiq </source>
+        <source>Pasport vaqtincha yopiq</source>
         <target state="translated"> Паспорт временно закрыт </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.hidden.lead" datatype="html">
@@ -511,7 +611,7 @@
         <target state="translated"> Страница этой футболки временно закрыта. Отсканируйте позже или свяжитесь с нами. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">17,21</context>
+          <context context-type="linenumber">16,20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.unknown.title" datatype="html">
@@ -519,7 +619,7 @@
         <target state="translated">Ссылка недействительна</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">21,22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.invalid.unknown.lead" datatype="html">
@@ -527,7 +627,7 @@
         <target state="translated"> Футболка по этой ссылке не найдена. Отсканируйте чип на футболке снова или свяжитесь с нами. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/components/invalid-link/invalid-link.html</context>
-          <context context-type="linenumber">24,29</context>
+          <context context-type="linenumber">23,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="activate.title" datatype="html">
@@ -551,7 +651,7 @@
         <target state="translated">Активировать</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/pages/activate-page/activate-page.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">21,22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.unclaimed.title" datatype="html">
@@ -559,7 +659,7 @@
         <target state="translated"> Футболка ожидает активации </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/pages/scan-page/scan-page.html</context>
-          <context context-type="linenumber">7,9</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.unclaimed.lead" datatype="html">
@@ -567,7 +667,7 @@
         <target state="translated"> Зарегистрируйтесь и откройте цифровой паспорт этой футболки. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/pages/scan-page/scan-page.html</context>
-          <context context-type="linenumber">10,12</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="scan.unclaimed.register" datatype="html">
@@ -591,7 +691,7 @@
         <target state="translated">Эта футболка подлинная</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/pages/verify-page/verify-page.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="verify.lead" datatype="html">
@@ -599,31 +699,15 @@
         <target state="translated"> Футболка уже активирована. Паспорт виден только владельцу. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/scan/pages/verify-page/verify-page.html</context>
-          <context context-type="linenumber">6,8</context>
+          <context context-type="linenumber">7,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.authentic" datatype="html">
-        <source>✓ Tasdiqlangan TOFAN originali</source>
+        <source> ✓ Tasdiqlangan TOFAN originali </source>
         <target state="translated">✓ Подтверждённый оригинал TOFAN</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">23,26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.drop" datatype="html">
-        <source>Drop</source>
-        <target state="translated">Дроп</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">30,31</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.edition" datatype="html">
-        <source>Drop ichidagi raqami</source>
-        <target state="translated">Номер в дропе</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">34,35</context>
+          <context context-type="linenumber">16,20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.uniqueId" datatype="html">
@@ -631,23 +715,7 @@
         <target state="translated">Уникальный ID</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">38,39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.size" datatype="html">
-        <source>O&apos;lcham</source>
-        <target state="translated">Размер</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">43,44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.color" datatype="html">
-        <source>Rang</source>
-        <target state="translated">Цвет</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">49,50</context>
+          <context context-type="linenumber">22,23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.material" datatype="html">
@@ -655,15 +723,7 @@
         <target state="translated">Материал</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">64,65</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.manufacturedAt" datatype="html">
-        <source>Ishlab chiqarilgan</source>
-        <target state="translated">Дата производства</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">69,70</context>
+          <context context-type="linenumber">48,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.status" datatype="html">
@@ -671,7 +731,7 @@
         <target state="translated">Статус</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">73,75</context>
+          <context context-type="linenumber">57,59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.owner" datatype="html">
@@ -679,7 +739,7 @@
         <target state="translated">Владелец</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">85,86</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.registeredAt" datatype="html">
@@ -687,7 +747,7 @@
         <target state="translated">Дата регистрации</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">90,91</context>
+          <context context-type="linenumber">74,75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.expiresAt" datatype="html">
@@ -695,23 +755,7 @@
         <target state="translated">Действует до</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.html</context>
-          <context context-type="linenumber">94,95</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.color.black" datatype="html">
-        <source>Qora</source>
-        <target state="translated">Черный</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.ts</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="garment.color.blue" datatype="html">
-        <source>Ko&apos;k</source>
-        <target state="translated">Синий</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">78,79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.status.unregistered" datatype="html">
@@ -719,7 +763,7 @@
         <target state="translated">Не зарегистрирована</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.status.registered" datatype="html">
@@ -727,7 +771,7 @@
         <target state="translated">Зарегистрирована</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="garment.status.expired" datatype="html">
@@ -735,15 +779,15 @@
         <target state="translated">Срок истёк</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/garment-preview/garment-preview.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="passport.pages" datatype="html">
-        <source>Pasport sahifalari</source>
-        <target state="translated">Страницы паспорта</target>
+      <trans-unit id="passport.cover.open" datatype="html">
+        <source>Ochish uchun bosing</source>
+        <target state="translated">Нажмите, чтобы открыть</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/passport-book/passport-book.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">17,20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="password.show" datatype="html">
@@ -776,6 +820,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/state-screen/state-screen.html</context>
           <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="garment.color.black" datatype="html">
+        <source>Qora</source>
+        <target state="translated">Черный</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/models/garment-color-label.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="garment.color.blue" datatype="html">
+        <source>Ko&apos;k</source>
+        <target state="translated">Синий</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/models/garment-color-label.ts</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
     </body>
