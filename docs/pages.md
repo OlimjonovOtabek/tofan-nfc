@@ -81,7 +81,7 @@ The centrepiece, redesigned 2026-10-12 after the product owner's prototype. The 
 a cover that the owner taps to open. Behind it are three sections, switched by a bar pinned to the
 bottom of the screen: **Pasport**, **Futbolka**, **Profil**. The bar appears once the cover is open.
 
-**Cover** (`shared/components/passport-book`). Dark textured field, the Peaktofan emblem, the words
+**Cover** (`features/passport/components/passport-book`). Dark textured field, the Peaktofan emblem, the words
 "RAQAMLI PASPORT", the owner's name, the serial number, "Muddati tugagan" when the server marked the
 passport expired, and the hint "Ochish uchun bosing". It swings open like a book cover; with reduced
 motion it simply disappears. It closes again on every visit.
@@ -147,7 +147,7 @@ too many attempts (429). Each ends with a way out: shop link or support contact.
   desktop. No sidebar, no topbar shell, no data table anywhere in this app.
 - **Dark and premium, with a light twin.** The passport metaphor wants depth: near-black background,
   warm gold accent, thin uppercase headings. Dark is the default; the header has a switch to a cream
-  light theme (`core/layout/theme`), remembered per device in `localStorage` (key `peaktofan.theme`, a
+  light theme (`core/layout/theme.store.ts`), remembered per device in `localStorage` (key `peaktofan.theme`, a
   preference only, never the token). Colours live as `--app-*` tokens in `src/styles/styles.css` (light
   on `:root`, dark on `:root.app-dark`) and in the Optimus UI preset (`core/config/peaktofan.preset.ts`).
   No hex values in components.
@@ -160,7 +160,7 @@ too many attempts (429). Each ends with a way out: shop link or support contact.
   `prefers-reduced-motion`, and none of it blocks interaction.
 - **One primary action per screen**, in a sticky bottom bar within thumb reach.
 - **Three states on every screen**: branded loading, inline error with retry, empty.
-- **No new dependency** for the booklet: a `shared/components/passport-book` built from CSS transforms
+- **No new dependency** for the booklet: a `features/passport/components/passport-book` built from CSS transforms
   and `@angular/cdk` swipe.
 
 ## 5.1 Control notes
@@ -178,11 +178,11 @@ Shared (`shared/components/`):
 | Component        | Purpose                                                             |
 | ---------------- | ------------------------------------------------------------------- |
 | `state-screen`   | Branded loading / error+retry / empty frame used by every page       |
-| `passport-book`  | Booklet container: page turn, swipe, reduced-motion fallback         |
 | `garment-preview`| Shirt photo plus product fields, used by activation and authenticity |
 | `password-input` | FormValueControl wrapper over Optimus p-password for Signal Forms    |
 
-Feature-only: `passport-cover`, `passport-data-page`, `passport-stamps-page`, `stamp-card`
+Feature-only: `passport-book` (booklet container: page turn, swipe, reduced-motion fallback),
+`passport-cover`, `passport-data-page`, `passport-stamps-page`, `stamp-card`
 (in `features/passport/components/`), `register-form`, `login-form` (in `features/auth/components/`).
 
 ## 7. Languages

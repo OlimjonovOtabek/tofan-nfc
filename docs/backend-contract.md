@@ -15,7 +15,7 @@ compare against the staging Swagger and update here first.
   Development uses `/api`, proxied by `proxy.conf.json`.
 - Routes have no `/api` prefix on the backend itself.
 - Auth: `Authorization: Bearer <access_token>` from Keycloak (realm `tofan`), attached by
-  `core/auth/auth-token.interceptor.ts` for `API_BASE_URL` requests only.
+  `core/auth/interceptors/auth-token.interceptor.ts` for `API_BASE_URL` requests only.
 - JSON is camelCase. Enums travel as integers.
 
 ## Success envelope
@@ -145,7 +145,7 @@ Bearer optional. This is the only endpoint that decides what a scan means.
 `null` when nobody registered it. `username` is the owner's profile username and is `null` for an
 owner who has not created a profile yet. The page shows it as `@username` with the registration date
 and the validity (`shared/components/garment-preview`). The public status comes from it
-(`shared/models/garment-registration.ts`): no registration → not registered, `isExpired` → expired,
+(`shared/garment/garment-registration.ts`): no registration → not registered, `isExpired` → expired,
 otherwise registered. `isExpired` is the server's verdict; never compare `expiresAt` to the device clock.
 
 **`model` is gone** (2026-10-11). A shirt is described by its drop and variant: `dropName` ("Drop 1"),
@@ -163,7 +163,7 @@ it is and never checks its shape.
 
 `color` is a `#RRGGBB` code chosen in the admin panel with a colour picker. Older shirts may carry a
 word (`black`, `blue`, `Qora`, `Ko'k`, Russian names). `garmentShadeOf`
-(`shared/models/garment-color.ts`) paints the shirt with the code, maps the old words to theme shades
+(`shared/garment/garment-color.ts`) paints the shirt with the code, maps the old words to theme shades
 (`--app-shirt-black`, `--app-shirt-blue`) and falls back to `--app-shirt-neutral`. The colour row shows
 a swatch; an old word is also named in the page language.
 
