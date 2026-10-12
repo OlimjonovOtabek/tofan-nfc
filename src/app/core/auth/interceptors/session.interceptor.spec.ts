@@ -7,7 +7,7 @@ import {
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it, vi } from 'vitest';
-import { AuthStore } from './auth.store';
+import { AuthStore } from '../auth.store';
 import { sessionInterceptor } from './session.interceptor';
 
 function setup(options: {

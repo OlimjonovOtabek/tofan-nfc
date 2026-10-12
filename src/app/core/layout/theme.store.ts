@@ -7,7 +7,7 @@ import {
   THEME_STORAGE_KEY,
   oppositeOf,
   toAppTheme,
-} from './app-theme';
+} from './models/app-theme';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeStore {

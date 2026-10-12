@@ -4,7 +4,7 @@ import { Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { provideRouter } from '@angular/router';
 import { describe, expect, it } from 'vitest';
 import { authGuard } from './auth.guard';
-import { AuthStore } from './auth.store';
+import { AuthStore } from '../auth.store';
 
 function runGuard(hasSession: boolean, url: string, platform = 'browser'): boolean | UrlTree {
   TestBed.configureTestingModule({
@@ -16,9 +16,7 @@ function runGuard(hasSession: boolean, url: string, platform = 'browser'): boole
   });
 
   const state = { url } as RouterStateSnapshot;
-  return TestBed.runInInjectionContext(() =>
-    authGuard({} as never, state),
-  ) as boolean | UrlTree;
+  return TestBed.runInInjectionContext(() => authGuard({} as never, state)) as boolean | UrlTree;
 }
 
 describe('authGuard', () => {

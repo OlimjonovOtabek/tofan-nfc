@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { ApiClient } from '@core/http/api-client';
-import { garmentImagePath } from '@shared/models/garment.mapper';
+import { garmentImagePath } from '@shared/garment/garment.mapper';
 import { GarmentScan } from '../models/garment-scan';
 import { GarmentScanDto } from './garment-scan.dto';
 import { toGarmentScan } from './garment-scan.mapper';

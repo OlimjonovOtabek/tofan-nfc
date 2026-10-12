@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { THEME_STORAGE_KEY } from './app-theme';
+import { THEME_STORAGE_KEY } from './models/app-theme';
 import { ThemeStore } from './theme.store';
 
 function rootOf(): HTMLElement {

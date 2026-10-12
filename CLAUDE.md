@@ -64,21 +64,26 @@ no DI composition folder). It is a small UI project; keep it flat and readable.
 ```text
 src/app/
   core/                    # app-wide singletons, loaded once, never feature-specific
-    auth/                  # AuthStore, AuthService, session storage, guards, auth interceptors
+    auth/                  # auth.store.ts plus guards/, interceptors/, storage/, models/, errors/,
+                           # services/ (AuthService, DTO, mapper)
     http/                  # ApiClient (HttpClient), API_BASE_URL, Result envelope, error mapping
-    layout/                # mobile shell: brand header, language switcher, safe-area container
+    layout/                # mobile shell: components/ (app-shell, language-switcher, theme-switcher),
+                           # models/ (app-locale, app-theme), theme.store.ts
     config/                # app paths, title strategy, UI providers
     feedback/              # toast, error message text
   features/                # one folder per screen group, lazy loaded
+    home/                  # / — the landing screen without a token
     scan/                  # /t/:token — resolve, activate, verify
     auth/                  # login, register
     passport/              # the passport booklet
     not-found/
-  shared/                  # business-agnostic, reusable in any feature
+  shared/                  # reusable in any feature
     components/            # dumb reusable components (wrappers over Optimus UI)
+    garment/               # the Garment model, DTO and mapper, read by scan and passport
     models/ | utils/ | directives/ | pipes/
   routes/
     app.routes.ts          # top-level routes, loadChildren per feature
+    app.routes.server.ts   # SSR render modes
   app.config.ts
   app.ts                   # root component (Angular 22 naming, no .component suffix)
 ```
@@ -108,15 +113,16 @@ components in `pages/` and has its own `<feature>.routes.ts`; `routes/app.routes
 | Need                    | Location                            | File name                  |
 | ----------------------- | ----------------------------------- | -------------------------- |
 | Model / entity          | `features/<x>/models/`              | `garment-scan.ts`          |
-| Pure rule, draft, labels| `features/<x>/models/`              | `scan-state.ts`            |
+| Pure rule, draft, labels| `features/<x>/models/`              | `scan-route.ts`            |
 | Backend DTO             | `features/<x>/services/`            | `garment-scan.dto.ts`      |
 | DTO to model mapping    | `features/<x>/services/`            | `garment-scan.mapper.ts`   |
 | HTTP calls              | `features/<x>/services/`            | `garments.service.ts`      |
 | Screen state            | `features/<x>/`                     | `scan.store.ts`            |
 | Routed screen           | `features/<x>/pages/<name>-page/`   | `scan-page.ts`             |
-| Feature-only component  | `features/<x>/components/<name>/`   | `garment-preview.ts`       |
-| Reusable component      | `shared/components/<name>/`         | `passport-book.ts`         |
-| Route guard             | `core/auth/`                        | `auth.guard.ts`            |
+| Feature-only component  | `features/<x>/components/<name>/`   | `passport-book.ts`         |
+| Reusable component      | `shared/components/<name>/`         | `garment-preview.ts`       |
+| Route guard             | `core/auth/guards/`                 | `auth.guard.ts`            |
+| Shared by two features  | `shared/<area>/`                    | `shared/garment/garment.ts`|
 
 Angular 22 file naming: no `.component` suffix (`garment-preview.ts`, class `GarmentPreview`).
 Stores `.store.ts`, services `.service.ts`, DTOs `.dto.ts`, mappers `.mapper.ts`, routes `.routes.ts`.

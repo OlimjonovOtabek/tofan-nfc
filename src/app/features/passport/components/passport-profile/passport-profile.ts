@@ -1,6 +1,6 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { AuthStore } from '@core/auth/auth.store';
-import { LanguageSwitcher } from '@core/layout/language/language-switcher';
+import { LanguageSwitcher } from '@core/layout/components/language-switcher/language-switcher';
 
 @Component({
   selector: 'app-passport-profile',

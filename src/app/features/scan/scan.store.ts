@@ -1,8 +1,8 @@
 import { Injectable, LOCALE_ID, computed, inject, signal } from '@angular/core';
 import { toErrorMessage } from '@core/feedback/error-message';
-import { toAppLocale } from '@core/layout/language/app-locale';
-import { Garment } from '@shared/models/garment';
-import { GarmentRegistration } from '@shared/models/garment-registration';
+import { toAppLocale } from '@core/layout/models/app-locale';
+import { Garment } from '@shared/garment/garment';
+import { GarmentRegistration } from '@shared/garment/garment-registration';
 import {
   GarmentScan,
   InvalidReason,

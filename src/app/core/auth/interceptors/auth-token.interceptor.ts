@@ -1,6 +1,6 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { AuthSessionStorage } from '@core/auth/auth-session.storage';
+import { AuthSessionStorage } from '../storage/auth-session.storage';
 import { API_BASE_URL } from '@core/http/api-base-url';
 
 export const authTokenInterceptor: HttpInterceptorFn = (request, next) => {

@@ -3,8 +3,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { ToastModule } from '@openng/optimus-ui/toast';
 import { AuthStore } from '@core/auth/auth.store';
 import { AppPaths } from '@core/config/app-paths';
-import { LanguageSwitcher } from '@core/layout/language/language-switcher';
-import { ThemeSwitcher } from '@core/layout/theme/theme-switcher';
+import { LanguageSwitcher } from '../language-switcher/language-switcher';
+import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 import { Logo } from '@shared/components/logo/logo';
 
 @Component({

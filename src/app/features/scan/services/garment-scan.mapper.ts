@@ -1,5 +1,5 @@
-import { ImageUrlOf, toGarment } from '@shared/models/garment.mapper';
-import { GarmentRegistration } from '@shared/models/garment-registration';
+import { ImageUrlOf, toGarment } from '@shared/garment/garment.mapper';
+import { GarmentRegistration } from '@shared/garment/garment-registration';
 import { enumMap } from '@shared/utils/enum-map';
 import { GarmentScan, InvalidReason, ScanState } from '../models/garment-scan';
 import { ScanContractError } from '../models/scan-contract.error';

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { ApiClient } from '@core/http/api-client';
-import { garmentImagePath } from '@shared/models/garment.mapper';
+import { garmentImagePath } from '@shared/garment/garment.mapper';
 import { Passport } from '../models/passport';
 import { PassportDto } from './passport.dto';
 import { toPassport } from './passport.mapper';

@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, LOCALE_ID, inject, signal } from '@angular/core';
-import { AppLocale, SUPPORTED_LOCALES, localizedUrl, toAppLocale } from './app-locale';
+import { AppLocale, SUPPORTED_LOCALES, localizedUrl, toAppLocale } from '../../models/app-locale';
 
 const LOCALE_NAMES: Record<AppLocale, string> = {
   uz: "O'zbekcha",

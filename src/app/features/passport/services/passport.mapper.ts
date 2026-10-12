@@ -1,4 +1,4 @@
-import { ImageUrlOf, toGarment } from '@shared/models/garment.mapper';
+import { ImageUrlOf, toGarment } from '@shared/garment/garment.mapper';
 import { Passport, PassportStanding } from '../models/passport';
 import { PassportDto, PassportStandingDto } from './passport.dto';
 

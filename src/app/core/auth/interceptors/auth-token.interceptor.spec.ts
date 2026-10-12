@@ -3,8 +3,8 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
 import { API_BASE_URL } from '@core/http/api-base-url';
-import { AuthSession } from './auth-session';
-import { AuthSessionStorage } from './auth-session.storage';
+import { AuthSession } from '../models/auth-session';
+import { AuthSessionStorage } from '../storage/auth-session.storage';
 import { authTokenInterceptor } from './auth-token.interceptor';
 
 function createValidSession(): AuthSession {

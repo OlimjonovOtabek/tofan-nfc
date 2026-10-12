@@ -1,5 +1,5 @@
-import { Garment } from '@shared/models/garment';
-import { GarmentRegistration } from '@shared/models/garment-registration';
+import { Garment } from '@shared/garment/garment';
+import { GarmentRegistration } from '@shared/garment/garment-registration';
 
 export type InvalidReason = 'unknown' | 'revoked' | 'hidden';
 

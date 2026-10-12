@@ -1,9 +1,9 @@
 import { enumMap } from '@shared/utils/enum-map';
-import { AuthSession } from './auth-session';
-import { UserProfile } from './user-profile';
+import { AuthSession } from '../models/auth-session';
+import { UserProfile } from '../models/user-profile';
 import { AuthTokenResponse, CreateProfileRequest, GenderDto } from './auth.dto';
-import { decodeJwtPayload } from './jwt';
-import { Gender, Registration, toUsername } from './registration';
+import { decodeJwtPayload } from '../models/jwt';
+import { Gender, Registration, toUsername } from '../models/registration';
 
 const MILLISECONDS_IN_SECOND = 1000;
 const DEFAULT_COUNTRY_CODE = 'UZ';

@@ -1,5 +1,5 @@
 import { Component, computed, input, linkedSignal } from '@angular/core';
-import { Garment } from '@shared/models/garment';
+import { Garment } from '@shared/garment/garment';
 import { GarmentShirt } from '../garment-shirt/garment-shirt';
 
 @Component({

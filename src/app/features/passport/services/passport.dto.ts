@@ -1,4 +1,4 @@
-import { GarmentDto } from '@shared/models/garment.dto';
+import { GarmentDto } from '@shared/garment/garment.dto';
 
 export interface PassportLevelDto {
   name: string;

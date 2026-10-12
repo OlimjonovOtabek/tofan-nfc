@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { GarmentPhoto } from '@shared/components/garment-photo/garment-photo';
 import { Logo } from '@shared/components/logo/logo';
-import { colorLabelOf, hasColor } from '@shared/models/garment-color-label';
+import { colorLabelOf, hasColor } from '@shared/garment/garment-color-label';
 import { machineReadableZone } from '../../models/machine-readable-zone';
 import { Passport, holderName } from '../../models/passport';
 
